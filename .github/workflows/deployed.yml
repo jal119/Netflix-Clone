@@ -41,7 +41,7 @@ jobs:
 
   deploy:
     needs: build-analyze-scan
-    runs-on: self-hosted # Use your self-hosted runner label here
+    runs-on: [Git-Action] # Use your self-hosted runner label here
     steps:
     - name: Pull the Docker image
       run: docker pull jall1985/tic-tac-toe:latest
