@@ -36,6 +36,8 @@ jobs:
           docker push jall1985/tic-tac-toe:latest
         env:
           DOCKER_CLI_ACI: 1
+      - name: Trivy image scan
+        run: trivy image jall1985/tic-tac-toe:latest # Add Trivy scan command here
 
 
 
