@@ -1,13 +1,7 @@
 terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
-    }
+  backend "s3" {
+    bucket = "ayan-general288882" # Replace with your actual S3 bucket name
+    key    = "EKS/terraform.tfstate"
+    region = "ap-south-1"
   }
-}
-
-# Configure the AWS Provider
-provider "aws" {
-  region = "us-east-1"
 }
