@@ -36,8 +36,6 @@ jobs:
           docker push jall1985/tic-tac-toe:latest
         env:
           DOCKER_CLI_ACI: 1
-      - name: Trivy image scan
-        run: trivy image jall1985/tic-tac-toe:latest # Add Trivy scan command here
 
   deploy:
     needs: build-analyze-scan
@@ -45,6 +43,8 @@ jobs:
     steps:
     - name: Pull the Docker image
       run: docker pull jall1985/tic-tac-toe:latest
+    - name: Trivy image scan
+      run: trivy image jall1985/tic-tac-toe:latest # Add Trivy scan command here
       
     - name: Run the container
       run: docker run -d --name ticgame -p 3000:3000 jall1985/tic-tac-toe:latest
