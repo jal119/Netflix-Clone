@@ -45,6 +45,7 @@ jobs:
     steps:
     - name: Pull the Docker image
       run: docker pull jall1985/tic-tac-toe:latest
+      
     - name: Run the container
       run: docker run -d --name ticgame -p 3000:3000 jall1985/tic-tac-toe:latest
 
